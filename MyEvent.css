@@ -1,0 +1,71 @@
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+header {
+    background-color: #007BFF;
+    color: #fff;
+    text-align: center;
+    padding: 10px;
+}
+
+/* Additional styles for the form and home section */
+#eventCreationForm, #homeSection {
+    background-color: #fff;
+    padding: 20px;
+    margin: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+.hidden {
+    display: none;
+}
+/* Existing styles */
+
+/* Additional styles for the grid layout */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+
+
+.registration-button {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+}
+
+/* ... other styles ... */
+/* ... Existing CSS styles ... */
+
+/* Additional styles for event cards and border lines */
+.event-card {
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 20px;
+    background-color: #f9f9f9;
+    position: relative;
+}
+
+.location {
+    font-size: 14px;
+    color: #777;
+}
+
+.countdown {
+    font-size: 16px;
+    color: #007BFF;
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+}
+
+/* ... Other CSS styles ... */

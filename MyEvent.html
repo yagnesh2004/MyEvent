@@ -3,10 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>MyEvent</title>
+    <title>Event Management App</title>
+    <link rel="stylesheet" href="MyEvent.css">
 </head>
 <body>
-    <div><li>Home</li></div>
-    
+    <header>
+        <button id="createEventButton">Create</button>
+        <button id="showHomeButton">Home</button>
+    </header>
+
+    <main>
+        <div id="eventCreationForm" class="hidden">
+            <h2>Create a New Event</h2>
+            <form>
+                <label for="eventTitle">Title of the Event:</label>
+                <input type="text" id="eventTitle" required>
+                
+                <label for="eventDescription">Description of the Event:</label>
+                <textarea id="eventDescription" required></textarea>
+                
+                <label for="eventDate">Date of the Event:</label>
+                <input type="date" id="eventDate" required>
+
+                <label for="eventTime">Time of the Event (IST):</label>
+                <input type="time" id="eventTime" required>
+                <form>
+                    <label for="eventLocation">Location of the Event:</label>
+                    <input type="text" id="eventLocation" required>
+             
+                </form>
+
+                <button type="button" id="publishEventButton">Publish</button>
+            </form>
+        </div>
+        <!-- ... Existing HTML code ... -->
+       
+<!-- ... Other HTML code ... -->
+
+
+        <div id="homeSection" class="hidden">
+            <h2>Home</h2>
+            <div id="eventCount">Total Events: 0</div>
+            <div id="eventList" class="event-grid">
+                <!-- Event cards with registration and time details -->
+            </div>
+        </div>
+    </main>
+
+    <script src="MyEvent.js"></script>
 </body>
 </html>
