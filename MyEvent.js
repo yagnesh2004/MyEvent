@@ -27,9 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
             <p>${event.description}</p>
             <p>Date: ${event.date}</p>
             <p>Time: ${event.time}</p>
-            <p>Location: ${event.location}</p>
             <p>Attendees: <span id="eventAttendees_${event.id}">${event.attendees}</span></p>
-            <p class="countdown" id="eventCountdown_${event.id}">Countdown: 00:00:00</p>
             <button class="registration-button" data-event-id="${event.id}">Register</button>
         `;
         eventList.appendChild(eventItem);
@@ -38,11 +36,6 @@ document.addEventListener('DOMContentLoaded', function () {
         registerButton.addEventListener('click', function () {
             registerForEvent(event);
         });
-
-        // Display live countdown timer
-        const countdownElement = eventItem.querySelector(`#eventCountdown_${event.id}`);
-        const eventTime = new Date(`${event.date}T${event.time}:00`);
-        updateCountdown(countdownElement, eventTime);
     }
 
     function displayEvents() {
@@ -68,7 +61,6 @@ document.addEventListener('DOMContentLoaded', function () {
         const eventDescription = document.getElementById('eventDescription').value;
         const eventDate = document.getElementById('eventDate').value;
         const eventTime = document.getElementById('eventTime').value;
-        const eventLocation = document.getElementById('eventLocation').value;
 
         const newEvent = {
             id: eventIdCounter++,
@@ -76,7 +68,6 @@ document.addEventListener('DOMContentLoaded', function () {
             description: eventDescription,
             date: eventDate,
             time: eventTime,
-            location: eventLocation,
             attendees: 0,
         };
 
@@ -86,27 +77,7 @@ document.addEventListener('DOMContentLoaded', function () {
         document.getElementById('eventDescription').value = '';
         document.getElementById('eventDate').value = '';
         document.getElementById('eventTime').value = '';
-        document.getElementById('eventLocation').value = '';
 
         displayEvents();
     });
-
-    function updateCountdown(countdownElement, eventTime) {
-        function update() {
-            const currentTime = new Date();
-            const timeDiff = eventTime - currentTime;
-
-            if (timeDiff <= 0) {
-                countdownElement.textContent = 'Event Ended';
-            } else {
-                const hours = String(Math.floor((timeDiff / (1000 * 60 * 60)) % 24)).padStart(2, '0');
-                const minutes = String(Math.floor((timeDiff / 1000 / 60) % 60)).padStart(2, '0');
-                const seconds = String(Math.floor((timeDiff / 1000) % 60)).padStart(2, '0');
-                countdownElement.textContent = `Countdown: ${hours}:${minutes}:${seconds}`;
-            }
-        }
-
-        update();
-        const countdownInterval = setInterval(update, 1000);
-    }
 });

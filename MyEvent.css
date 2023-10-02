@@ -69,3 +69,87 @@ header {
 }
 
 /* ... Other CSS styles ... */
+/* Existing styles */
+
+/* Additional styles for the grid layout */
+.event-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-gap: 20px;
+}
+
+/* Additional styles for the registration button */
+.registration-button {
+    background-color: #007BFF; /* Deep Blue Color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Increased Padding for Larger Size */
+    cursor: pointer;
+    border-radius: 5px; /* Rounded Corners */
+    font-weight: bold; /* Bold Text */
+    transition: background-color 0.2s;
+    font-size: 16px; /* Increased Font Size */
+}
+
+/* Hover effect for the registration button */
+.registration-button:hover {
+    background-color: #0056b3; /* Darker Blue Color on Hover */
+}
+
+/* ... Other styles ... */
+/* Additional styles for the "Publish" button in the event creation form */
+#publishEventButton {
+    background-color: #007BFF; /* Deep blue color */
+    color: #fff;
+    border: none;
+    padding: 10px 20px; /* Increased padding for a larger button */
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: 500;
+    transition: background-color 0.2s;
+    margin-top: 10px; /* Add some spacing from other form elements */
+}
+
+#publishEventButton:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+/* Additional styles for the input fields in the event creation form */
+#eventCreationForm input[type="text"],
+#eventCreationForm textarea,
+#eventCreationForm input[type="date"],
+#eventCreationForm input[type="time"] {
+    width: 100%; /* Make input fields wider */
+    padding: 10px; /* Add padding for spacing */
+    border: 1px solid #ccc; /* Add a border */
+    border-radius: 5px; /* Add rounded corners */
+    font-size: 16px; /* Increase font size */
+    margin-bottom: 10px; /* Add spacing between fields */
+}
+
+/* Apply the same styles to the event poster input */
+#eventCreationForm input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    margin-bottom: 10px;
+}
+
+/* Additional styles for the "Publish" button in the event creation form */
+#publishEventButton {
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-weight: bold;
+    transition: background-color 0.2s;
+    margin-top: 10px;
+    font-size: 18px; /* Slightly larger font size */
+}
+
+#publishEventButton:hover {
+    background-color: #0056b3;
+}
