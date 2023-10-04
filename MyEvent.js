@@ -81,3 +81,53 @@ document.addEventListener('DOMContentLoaded', function () {
         displayEvents();
     });
 });
+function addEventToHome(event) {
+    // ... Existing code ...
+
+    // Check if the description is longer than 400 characters
+    if (event.description.length > 400) {
+        const truncatedDescription = event.description.slice(0, 400);
+        const remainingDescription = event.description.slice(400);
+
+        eventItem.innerHTML += `
+            <p>${truncatedDescription}<span id="more_${event.id}" style="display:none;">${remainingDescription}</span></p>
+            <button class="read-more-button" data-event-id="${event.id}">Read More</button>
+        `;
+        
+        const readMoreButton = eventItem.querySelector(`[data-event-id="${event.id}"]`);
+        readMoreButton.addEventListener('click', function () {
+            const moreContent = document.getElementById(`more_${event.id}`);
+            moreContent.style.display = 'inline';
+            readMoreButton.style.display = 'none';
+        });
+    } else {
+        eventItem.innerHTML += `<p>${event.description}</p>`;
+    }
+
+    // ... Other code ...
+}
+function addEventToHome(event) {
+    // ... Existing code ...
+
+    // Add a delete button
+    eventItem.innerHTML += `
+        <!-- ... Previous HTML ... -->
+        <button class="delete-button" data-event-id="${event.id}">Delete</button>
+    `;
+
+    const deleteButton = eventItem.querySelector(`[data-event-id="${event.id}"]`);
+    deleteButton.addEventListener('click', function () {
+        deleteEvent(event);
+    });
+
+    // ... Other code ...
+}
+
+function deleteEvent(event) {
+    // Find and remove the event from the events array
+    const eventIndex = events.findIndex(e => e.id === event.id);
+    if (eventIndex !== -1) {
+        events.splice(eventIndex, 1);
+        displayEvents(); // Refresh the event list
+    }
+}
